@@ -39,7 +39,6 @@ const transactionSlice = createSlice({
     editInActive: (state) => {
       state.editItem = {}
     }
-
   },
   extraReducers: (builder) => {
     builder

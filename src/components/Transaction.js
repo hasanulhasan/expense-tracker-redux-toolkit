@@ -3,12 +3,12 @@ import editImg from '../../src/images/edit.svg'
 import dltImg from '../../src/images/delete.svg'
 import { useDispatch } from 'react-redux';
 import { editActive, removeTransaction } from '../features/transactionSlice';
-import numberWithCommas from '../Utils/thosandSeparate';
+// import numberWithCommas from '../Utils/thosandSeparate';
 
 const Transaction = ({ transaction }) => {
   const dispatch = useDispatch();
   const { id, name, amount, type } = transaction || {};
-
+  // console.log(amount)
   const editHandle = () => {
     dispatch(editActive(transaction))
   }
@@ -19,7 +19,7 @@ const Transaction = ({ transaction }) => {
     <li className={`transaction ${type}`}>
       <p>{name}</p>
       <div className="right">
-        <p>৳ {numberWithCommas(amount)}</p>
+        <p>৳{amount}</p>
         <button onClick={editHandle} className="link">
           <img alt='...'
             className="icon"

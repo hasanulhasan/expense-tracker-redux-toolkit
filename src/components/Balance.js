@@ -4,6 +4,7 @@ import numberWithCommas from '../Utils/thosandSeparate';
 
 const Balance = () => {
   const { transactions } = useSelector(state => state.transaction);
+  console.log(transactions)
 
   const calculateIncome = (transactions) => {
     let income = 0;
@@ -26,7 +27,7 @@ const Balance = () => {
       <h3>
         <span>৳ </span>
         {
-          transactions?.length > 0 ? <span>{numberWithCommas(calculateIncome(transactions))}</span> : <span>0</span>
+          transactions?.length > 0 ? <span>{(calculateIncome(transactions))}</span> : <span>0</span>
         }
       </h3>
     </div>
